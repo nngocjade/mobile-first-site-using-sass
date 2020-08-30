@@ -3,7 +3,19 @@ $secondary-color: #ff652f;
 
 // resets
 * {
- box-sizing: border-box;
- margin: 0;
- padding-block: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding-block: 0;
+}
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
 }
